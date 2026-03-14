@@ -1,12 +1,90 @@
-This repository is for the internal consistency detection model using CNN and text-based features. Instructions on how to use different components and build models are provided in the thesis.
-Due to their sizes, the following deployed encoding models are not included in the repository. Please download them and add them to the 'data' folder. These files could be downloaded from reliable sources and are publicly available.
-1. GoogleNews-vectors-negative300.bin  (source: https://www.kaggle.com/datasets/leadbest/googlenewsvectorsnegative300)
-2. glove.6B.100d.txt                   (source: https://www.kaggle.com/datasets/sawarn69/glove6b100dtxt)
+# Internal Consistency Detection for Misinformation Analysis
 
-Dataset:
-Gold-standard dataset with consistency and veracity labels is provided in the 'data' folder, data.csv
-Consistency labels are in the 'label' column. 0 shows an IC and 1 shows an NIC article.
-Veracity labels are in the 'label_fk' column. 0 shows real and 1 shows fake article.
-'Cleaned' is the content of news articles to be used for this experiment.
+**Author:** Atefeh Heydari, PhD  
+**Project Type:** NLP / Misinformation Detection / Research Prototype
 
-For more information, please get in touch with a.hey.ir@gmail.com
+---
+
+## Overview
+
+This repository contains a research prototype for detecting **internal consistency** in news articles and analysing its relationship with **veracity assessment**. The project investigates whether inconsistencies within the content of a news article can serve as useful signals for misinformation detection.
+
+The system combines **text-based features**, **word embeddings**, and **CNN-based modelling** to classify news articles according to their internal consistency while supporting veracity-related analysis.
+
+---
+
+## Research Context
+
+This work was developed as part of my doctoral research in Artificial Intelligence at the University of Manchester, focusing on computational approaches for analysing misinformation in online news content.
+
+---
+
+## Main Contributions
+
+- Developed a research pipeline for **internal consistency detection** in news articles  
+- Built a **CNN-based model** using text representations and linguistic features  
+- Conducted experiments analysing the relationship between **internal consistency signals and news veracity**  
+- Prepared a labelled dataset including:
+  - internal consistency labels  
+  - veracity labels  
+  - cleaned article text for experimentation
+
+---
+
+## Repository Structure
+
+IC-Misinformation/
+├── data/               # Dataset and external embedding files
+├── src/                # Source code for preprocessing, modelling, and experiments
+├── requirements.txt    # Python dependencies
+└── README.md
+
+---
+
+## Dataset
+
+The repository includes a labelled dataset in the `data` folder:
+
+- `label` → internal consistency label  
+  - `0` = IC  
+  - `1` = NIC  
+
+- `label_fk` → veracity label  
+  - `0` = real  
+  - `1` = fake  
+
+- `Cleaned` → cleaned article text used for modelling
+
+---
+
+## External Embeddings Required
+
+Due to file size limitations, the following pretrained embeddings are not included in the repository and should be downloaded separately and placed inside the `data/` folder:
+
+- `GoogleNews-vectors-negative300.bin`
+- `glove.6B.100d.txt`
+
+---
+
+## Method Overview
+
+The project uses:
+
+- Python
+- CNN-based text classification
+- pretrained word embeddings
+- feature-based news analysis
+
+The typical workflow is:
+
+1. Prepare and clean article text  
+2. Load pretrained embeddings  
+3. Train internal consistency detection model  
+4. Evaluate consistency predictions  
+5. Analyse the relationship between consistency and veracity
+
+---
+
+## Notes
+
+This repository is shared as a **research prototype and portfolio project** derived from doctoral research experiments.
